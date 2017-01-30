@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackboard Archive Extractor", "CS411Crystal\Blackboard Archive Extractor.csproj", "{05F0B86F-AC45-4CDC-AE05-EAA602675072}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackboard Archive Extractor", "CS411Crystal\BlackboardArchiveExtractor.csproj", "{05F0B86F-AC45-4CDC-AE05-EAA602675072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

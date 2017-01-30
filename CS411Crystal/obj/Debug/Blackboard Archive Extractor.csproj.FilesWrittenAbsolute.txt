@@ -1,0 +1,1 @@
+/home/tpressley/411/410Crystal/CS411Crystal/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
