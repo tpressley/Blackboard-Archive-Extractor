@@ -11,12 +11,12 @@ namespace CS411Crystal
     {
         public string url { get; set; }
 
-        ParseLinks(string url)
+        public ParseLinks(string url)
         {
             this.url = url;
         }
 
-        void requestUrl(string url)
+        public void requestUrl(string url)
         {
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(this.url);
