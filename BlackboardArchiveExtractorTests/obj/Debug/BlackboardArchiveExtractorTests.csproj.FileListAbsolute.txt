@@ -1,0 +1,8 @@
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.exe
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.pdb
