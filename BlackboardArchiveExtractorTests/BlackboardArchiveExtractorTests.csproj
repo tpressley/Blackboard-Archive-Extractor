@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ParseLinksTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OutputTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CS411Crystal\BlackboardArchiveExtractor.csproj">
