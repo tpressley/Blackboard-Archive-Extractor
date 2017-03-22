@@ -6,3 +6,6 @@ C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debu
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\bin\Debug\CS411Crystal.exe.config
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\CS411Crystal.exe
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\CS411Crystal.pdb
