@@ -6,3 +6,10 @@ C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtr
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.pdb
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.dll
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.pdb
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.exe
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.pdb
+Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.pdb

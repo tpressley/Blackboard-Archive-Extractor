@@ -51,6 +51,8 @@
       <DependentUpon>BlackboardExtractorMain.cs</DependentUpon>
     </Compile>
     <Compile Include="BlackboardArchiveExtractor.cs" />
+    <Compile Include="CourseContent.cs" />
+    <Compile Include="CourseContentFactory.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="ParseLinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

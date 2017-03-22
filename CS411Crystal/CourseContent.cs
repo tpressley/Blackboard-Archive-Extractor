@@ -12,16 +12,16 @@ namespace CS411Crystal
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
         private List<CourseContent> children = new List<CourseContent>();
-        public readonly List<CourseContent> Children {  get { return children; }  } 
+        public List<CourseContent> Children {  get { return children; }  } 
 
-        public new CourseContent(CourseContent parent, string refId, string name)
+        public CourseContent(CourseContent parent, string refId, string name)
         {
             this.Parent = parent;
             this.RefId = refId;
             this.Name = name;
         }
 
-        public new CourseContent(string refId, string name)
+        public CourseContent(string refId, string name)
         {
             this.RefId = refId;
             this.Name = name;
