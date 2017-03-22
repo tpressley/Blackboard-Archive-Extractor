@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CS411Crystal
+{
+    class CourseContent
+    {
+        public string RefId { get; set; }
+        public string Name { get; set; }
+        public CourseContent Parent { get; set; }
+        private List<CourseContent> children = new List<CourseContent>();
+        public readonly List<CourseContent> Children {  get { return children; }  } 
+
+        public new CourseContent(CourseContent parent, string refId, string name)
+        {
+            this.Parent = parent;
+            this.RefId = refId;
+            this.Name = name;
+        }
+
+        public new CourseContent(string refId, string name)
+        {
+            this.RefId = refId;
+            this.Name = name;
+        }
+    }
+}
