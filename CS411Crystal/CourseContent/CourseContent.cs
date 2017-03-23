@@ -14,6 +14,14 @@ namespace CS411Crystal
         private List<CourseContent> children = new List<CourseContent>();
         public List<CourseContent> Children {  get { return children; }  } 
 
+        public CourseContent()
+        {
+            //Generic Constructor to make the compiler happy
+            RefId = "";
+            Name = "";
+            Parent = null;
+        }
+
         public CourseContent(CourseContent parent, string refId, string name)
         {
             this.Parent = parent;
