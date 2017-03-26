@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml.Linq;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -40,6 +41,15 @@ namespace ArchiveExtractorBusinessCode
             {
                 Console.WriteLine("Error: " + e);
                 return false;
+            }
+            return true;
+        }
+        public bool CreateIndex(System.Collections.Generic.List<XElement> elements)
+        {
+            System.Collections.Generic.Dictionary<string, string> elDict = new System.Collections.Generic.Dictionary<string, string>();
+            foreach(XElement el in elements)
+            {
+                elDict.Add(el.Name.ToString(), el.BaseUri.ToString());
             }
             return true;
         }
