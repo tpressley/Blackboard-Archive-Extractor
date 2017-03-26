@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace ArchiveExtractorBusinessCode
 {
     public class ManifestParser
     {
-        public List<XElement> GetOrganizationElements(XElement manifestXml)
+        public static List<XElement> GetOrganizationElements(XElement manifestXml)
         {
-            throw new NotImplementedException();
-/*
-            return null;
-*/
+            List<XElement> items = new List<XElement>();
+            items = manifestXml.Descendants("item").ToList();
+            return items;
         }
 
-        public List<XElement> GetResourceElements(XElement manifestXml)
+        public static List<XElement> GetResourceElements(XElement manifestXml)
         {
-            throw new NotImplementedException();
-/*
+            List<XElement> resources = new List<XElement>();
+            resources = manifestXml.Descendants("resource").ToList();
             return null;
-*/
         }
     }
 }
