@@ -27,6 +27,9 @@ namespace ArchiveExtractorCLI
             Archive.ExtractArchive(archiveLocation, extractDestination);
             Console.WriteLine("Done");
             var xml = File.ReadAllText(extractDestination + "/imsmanifest.xml");
+            XElement manifest = XElement.Parse(xml);
+
+            Directory.Delete(extractDestination,true);
         }
     }
 }
