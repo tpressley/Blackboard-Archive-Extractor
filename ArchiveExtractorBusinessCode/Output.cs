@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Linq;
+using System.Reflection;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -44,17 +45,44 @@ namespace ArchiveExtractorBusinessCode
             }
             return true;
         }
-        public bool CreateIndex(System.Collections.Generic.List<XElement> elements)
+        public bool CreateIndex(System.Collections.Generic.List<Object> elements)
         {
             //Get dictionary since all elements may not be sorted
             //Want to keep like files together
-            System.Collections.Generic.Dictionary<string, string> elDict = new System.Collections.Generic.Dictionary<string, string>();
-            foreach(XElement el in elements)
+            string tableContent = "";
+            
+            foreach(Object obj in elements)
             {
-                elDict.Add(el.Name.ToString(), el.BaseUri.ToString());
+                tableContent += "<tr><td>" + obj.ToString() + "</td><td>" + obj.GetType() + "</td></tr>\n";
             }
 
             //Grab index template
+            string indexString = "";
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                indexString = reader.ReadToEnd();
+            }
+
+            //Replace templating portions with variables retrieved
+            indexString = indexString.Replace("{INDEX_TITLE}", "BAE Index File");
+            indexString = indexString.Replace("{INDEX_TABLE_CONTENT}", tableContent);
+
+            try
+            {
+                System.IO.StreamWriter file = new System.IO.StreamWriter(TargetDir + "\\index.html");
+                file.WriteLine(indexString);
+                file.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                return false;
+            }
+
             return true;
         }
     }
