@@ -46,11 +46,15 @@ namespace ArchiveExtractorBusinessCode
         }
         public bool CreateIndex(System.Collections.Generic.List<XElement> elements)
         {
+            //Get dictionary since all elements may not be sorted
+            //Want to keep like files together
             System.Collections.Generic.Dictionary<string, string> elDict = new System.Collections.Generic.Dictionary<string, string>();
             foreach(XElement el in elements)
             {
                 elDict.Add(el.Name.ToString(), el.BaseUri.ToString());
             }
+
+            //Grab index template
             return true;
         }
     }
