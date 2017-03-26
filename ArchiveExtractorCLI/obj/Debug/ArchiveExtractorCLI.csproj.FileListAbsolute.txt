@@ -1,0 +1,8 @@
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe.config
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.csprojResolveAssemblyReference.cache
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.pdb

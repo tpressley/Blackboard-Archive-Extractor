@@ -1,4 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Xml.Linq;
+using ArchiveExtractorBusinessCode;
+using System.Security.Permissions;
 
 namespace ArchiveExtractorCLI
 {
@@ -18,6 +22,11 @@ namespace ArchiveExtractorCLI
             {
                 Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
             }
+
+            Console.WriteLine("Extracting Zip...");
+            Archive.ExtractArchive(archiveLocation, extractDestination);
+            Console.WriteLine("Done");
+            var xml = File.ReadAllText(extractDestination + "/imsmanifest.xml");
         }
     }
 }
