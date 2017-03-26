@@ -24,7 +24,7 @@ namespace CS411Crystal
         /// Some things it should be equipped to handle is Monitor Connectivity.
         /// </summary>
         /// <returns>Boolean of request if alive or not</returns>
-        public bool requestUrl()
+        public bool RequestUrl()
         {
             try
             {
@@ -35,18 +35,19 @@ namespace CS411Crystal
 
                 HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
                 finalUri = resp.ResponseUri.ToString();
-                Console.WriteLine((int)resp.StatusCode);
+                
+                var statusCode = (int)resp.StatusCode;
 
-                if (isAlive((int)resp.StatusCode))
+                if (IsAlive(statusCode))
                 {
-                    Console.WriteLine("ENDED WITH 200");
+                    //Console.WriteLine($"Response code: {statusCode}");
                     return true;
                 }
                 return false;
             }
             catch (WebException e)
             {
-                Console.WriteLine("ERR: " + e.ToString());
+                //Console.WriteLine("ERR: " + e.ToString());
                 if (e.Status == WebExceptionStatus.ProtocolError)
                 {   
 
@@ -54,8 +55,8 @@ namespace CS411Crystal
                     if (response != null)
                     {
                         var statusCode = (int)response.StatusCode;
-                        Console.WriteLine("HTTP Status Code: " + statusCode);
-                        return isAlive(statusCode);
+                        //Console.WriteLine("HTTP Status Code: " + statusCode);
+                        return IsAlive(statusCode);
                     }
                     else
                     {
@@ -77,13 +78,13 @@ namespace CS411Crystal
         /// </summary>
         /// <param name="uri">URI to be checked if it is an absolute URI</param>
         /// <returns>Boolean of whether it is a an absolute URI or not</returns>
-        public bool isAbsoluteUri(string uri)
+        public bool IsAbsoluteUri()
         {
             Uri result;
-            return Uri.TryCreate(uri, UriKind.Absolute, out result);
+            return Uri.TryCreate(this.uri, UriKind.Absolute, out result);
         }
 
-        private bool isAlive(int code)
+        private bool IsAlive(int code)
         {
             if(code == 200)
             {

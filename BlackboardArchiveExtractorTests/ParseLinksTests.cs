@@ -24,22 +24,28 @@ namespace CS411Crystal.Tests
         }
 
         /// <summary>
-        /// Request Test
+        /// Request Tests
         /// </summary>
         [TestMethod()]
-        public void requestUrlTest()
+        public void RequestUrlTest()
         {
+            // C:\Users\Grant\Downloads\imsmanifest.xml
             // init and check valid uri
+            // alive page - 200
             ParseLinks parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
-            bool isAlive = parser.requestUrl();
+            bool isAlive = parser.RequestUrl();
             Assert.AreEqual(isAlive,true);
-            // check redirect
-            parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect.php");
-            isAlive = parser.requestUrl();
+            // check 404 page - 404
+            parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/blahblah404definitely");
+            isAlive = parser.RequestUrl();
             Assert.AreEqual(isAlive, false);
-            // check infinite redirect error
+            // check redirect to an alive page - 200
+            parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect.php");
+            isAlive = parser.RequestUrl();
+            Assert.AreEqual(isAlive, true);
+            // check infinite redirect error - 404
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect2.php");
-            isAlive = parser.requestUrl();
+            isAlive = parser.RequestUrl();
             Assert.AreEqual(isAlive, false);
         }
 
@@ -50,14 +56,16 @@ namespace CS411Crystal.Tests
         [TestMethod()]
         public void AbsolutePathTest()
         {
-            ParseLinks parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
-            bool relativePath = parser.isAbsoluteUri("./test.html");
+            ParseLinks parser = new ParseLinks("./test.html");
+            bool relativePath = parser.IsAbsoluteUri();
             Assert.AreEqual(relativePath,false);
-
-            bool absolutePath = parser.isAbsoluteUri("http://www.cs.odu.edu");
+            
+            parser.uri = "http://www.cs.odu.edu";
+            bool absolutePath = parser.IsAbsoluteUri();
             Assert.AreEqual(absolutePath, true);
-
-            bool errorTest = parser.isAbsoluteUri("");
+            
+            parser.uri = "";
+            bool errorTest = parser.IsAbsoluteUri();
             Assert.AreEqual(errorTest, false);
         }
     }
