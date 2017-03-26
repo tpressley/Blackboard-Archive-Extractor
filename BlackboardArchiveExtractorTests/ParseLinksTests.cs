@@ -11,7 +11,6 @@ namespace CS411Crystal.Tests
     [TestClass()]
     public class ParseLinksTests
     {
-
         /// <summary>
         /// Constructor Test
         /// </summary>
@@ -34,19 +33,23 @@ namespace CS411Crystal.Tests
             // alive page - 200
             ParseLinks parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
             bool isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive,true);
+            Assert.AreEqual("http://www.cs.odu.edu/~gatkins/",parser.finalUri);
+            Assert.AreEqual(true, isAlive);
             // check 404 page - 404
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/blahblah404definitely");
             isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive, false);
+            Assert.AreEqual("", parser.finalUri);
+            Assert.AreEqual(false, isAlive);
             // check redirect to an alive page - 200
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect.php");
             isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive, true);
+            Assert.AreEqual("http://www.cs.odu.edu/~mln/teaching/cs532-s17/test/pdfs.html", parser.finalUri);
+            Assert.AreEqual(true, isAlive);
             // check infinite redirect error - 404
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect2.php");
             isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive, false);
+            Assert.AreEqual("", parser.finalUri);
+            Assert.AreEqual(false, isAlive);
         }
 
         /// <summary>
