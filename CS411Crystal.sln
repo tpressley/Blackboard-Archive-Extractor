@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackboardArchiveExtractor", "CS411Crystal\BlackboardArchiveExtractor.csproj", "{05F0B86F-AC45-4CDC-AE05-EAA602675072}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackboardArchiveExtractorTests", "BlackboardArchiveExtractorTests\BlackboardArchiveExtractorTests.csproj", "{D9DB2921-F7B4-4658-B5BC-E06486B5B84C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5} = {DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiveExtractorBusinessCode", "ArchiveExtractorBusinessCode\ArchiveExtractorBusinessCode.csproj", "{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{D9DB2921-F7B4-4658-B5BC-E06486B5B84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9DB2921-F7B4-4658-B5BC-E06486B5B84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9DB2921-F7B4-4658-B5BC-E06486B5B84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

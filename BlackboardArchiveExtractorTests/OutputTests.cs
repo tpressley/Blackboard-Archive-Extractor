@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CS411Crystal;
+using ArchiveExtractorBusinessCode;
 
 namespace CS411Crystal.Tests
 {

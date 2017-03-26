@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace CS411Crystal
+namespace ArchiveExtractorBusinessCode
 {
     class ImageResource : IBlackBoardResource
     {

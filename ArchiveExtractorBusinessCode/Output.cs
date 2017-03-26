@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace CS411Crystal
+namespace ArchiveExtractorBusinessCode
 {
     public class Output
     {
