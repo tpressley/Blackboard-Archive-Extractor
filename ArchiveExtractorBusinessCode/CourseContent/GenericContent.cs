@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ArchiveExtractorBusinessCode
 {
-    class GenericContent : CourseContent
+    internal class GenericContent : CourseContent
     {
         public string InnerText { get; set; }
-        private List<IBlackBoardResource> resources = new List<IBlackBoardResource>();
 
-        public List<IBlackBoardResource> Resources
-        {
-            get { return resources; }
-        }
+        public List<IBlackBoardResource> Resources { get; } = new List<IBlackBoardResource>();
     }
 }

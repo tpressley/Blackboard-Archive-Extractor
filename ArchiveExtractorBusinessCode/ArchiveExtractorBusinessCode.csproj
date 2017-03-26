@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ManifestParser.cs" />
     <Compile Include="CourseContent\CourseContent.cs" />
     <Compile Include="CourseContent\CourseContentFactory.cs" />
     <Compile Include="CourseContent\GenericContent.cs" />

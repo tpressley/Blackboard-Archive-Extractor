@@ -1,48 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace ArchiveExtractorBusinessCode
 {
     public class Output
     {
-        public string targetDir { get; set; }
+        public string TargetDir { get; set; }
         
         public Output(string targetDir)
         {
-            this.targetDir = targetDir;
+            TargetDir = targetDir;
         }
 
-        public bool createDir()
+        public bool CreateDir()
         {
             try
             {
-                if (Directory.Exists(targetDir))
+                if (Directory.Exists(TargetDir))
                 {
                     return false;
                 }
-                DirectoryInfo dirInfo = System.IO.Directory.CreateDirectory(targetDir);
+                var dirInfo = Directory.CreateDirectory(TargetDir);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.ToString());
+                Console.WriteLine("Error: " + e);
                 return false;
             }
             return true;
         }
-        public bool createDir(string targetDir)
+        public bool CreateDir(string targetDir)
         {
-            this.targetDir = targetDir;
+            TargetDir = targetDir;
             try
             {
-                this.createDir();
+                CreateDir();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.ToString());
+                Console.WriteLine("Error: " + e);
                 return false;
             }
             return true;

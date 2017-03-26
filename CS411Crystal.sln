@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackboardArchiveExtractorT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiveExtractorBusinessCode", "ArchiveExtractorBusinessCode\ArchiveExtractorBusinessCode.csproj", "{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiveExtractorCLI", "ArchiveExtractorCLI\ArchiveExtractorCLI.csproj", "{E5379F3F-17CD-4720-9D23-B196D1517C12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC5EAB2B-5B09-4097-8E4D-34D4606BFED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5379F3F-17CD-4720-9D23-B196D1517C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5379F3F-17CD-4720-9D23-B196D1517C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5379F3F-17CD-4720-9D23-B196D1517C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5379F3F-17CD-4720-9D23-B196D1517C12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

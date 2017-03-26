@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArchiveExtractorBusinessCode
 {
     public class ParseLinks
     {
-        public string uri { get; set; }                 // initial URI passed to this class to start request
-        public string finalUri { get; private set; }    // final URI that the response returns
+        public string Uri { get; set; }                 // initial URI passed to this class to start request
+        public string FinalUri { get; private set; }    // final URI that the response returns
 
         public ParseLinks(string uri)
         {
-            this.uri = uri;
-            this.finalUri = "";
+            Uri = uri;
+            FinalUri = "";
         }
 
         /// <summary>
@@ -24,20 +20,20 @@ namespace ArchiveExtractorBusinessCode
         /// Some things it should be equipped to handle is Monitor Connectivity.
         /// </summary>
         /// <returns>Boolean of request if alive or not</returns>
-        public bool requestUrl()
+        public bool RequestUrl()
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(this.uri);
+                var request = (HttpWebRequest)WebRequest.Create(Uri);
                 request.AllowAutoRedirect = true;
                 request.UserAgent = "Mozila/5.0";
                 request.Timeout = 10000;    //10s
 
-                HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
-                finalUri = resp.ResponseUri.ToString();
+                var resp = (HttpWebResponse)request.GetResponse();
+                FinalUri = resp.ResponseUri.ToString();
                 Console.WriteLine((int)resp.StatusCode);
 
-                if (isAlive((int)resp.StatusCode))
+                if (IsAlive((int)resp.StatusCode))
                 {
                     Console.WriteLine("ENDED WITH 200");
                     return true;
@@ -46,7 +42,7 @@ namespace ArchiveExtractorBusinessCode
             }
             catch (WebException e)
             {
-                Console.WriteLine("ERR: " + e.ToString());
+                Console.WriteLine("ERR: " + e);
                 if (e.Status == WebExceptionStatus.ProtocolError)
                 {   
 
@@ -55,20 +51,13 @@ namespace ArchiveExtractorBusinessCode
                     {
                         var statusCode = (int)response.StatusCode;
                         Console.WriteLine("HTTP Status Code: " + statusCode);
-                        return isAlive(statusCode);
+                        return IsAlive(statusCode);
                     }
-                    else
-                    {
-                        return false;
-                        // no http status code available
-                    }
-                }
-                else
-                {
                     return false;
                     // no http status code available
                 }
-
+                return false;
+                // no http status code available
             }
         }
 
@@ -77,13 +66,13 @@ namespace ArchiveExtractorBusinessCode
         /// </summary>
         /// <param name="uri">URI to be checked if it is an absolute URI</param>
         /// <returns>Boolean of whether it is a an absolute URI or not</returns>
-        public bool isAbsoluteUri(string uri)
+        public bool IsAbsoluteUri(string uri)
         {
             Uri result;
-            return Uri.TryCreate(uri, UriKind.Absolute, out result);
+            return System.Uri.TryCreate(uri, UriKind.Absolute, out result);
         }
 
-        private bool isAlive(int code)
+        private bool IsAlive(int code)
         {
             if(code == 200)
             {

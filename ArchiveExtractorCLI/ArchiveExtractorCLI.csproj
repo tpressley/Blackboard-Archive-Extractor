@@ -49,6 +49,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchiveExtractorBusinessCode\ArchiveExtractorBusinessCode.csproj">
+      <Project>{dc5eab2b-5b09-4097-8e4d-34d4606bfed5}</Project>
+      <Name>ArchiveExtractorBusinessCode</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

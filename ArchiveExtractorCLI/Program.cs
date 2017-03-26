@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArchiveExtractorBusinessCode;
 
 namespace ArchiveExtractorCLI
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            string ArchiveLocation = "";
-            string ExtractDestination = "";
+            var archiveLocation = "";
+            var extractDestination = "";
 
             try
             {
-                ArchiveLocation = args[0];
-                ExtractDestination = args[1];
+                archiveLocation = args[0];
+                extractDestination = args[1];
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
-                System.Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
+                Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
             }
         }
     }
