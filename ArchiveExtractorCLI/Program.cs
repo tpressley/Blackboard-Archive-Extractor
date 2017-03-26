@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 using ArchiveExtractorBusinessCode;
@@ -30,6 +31,13 @@ namespace ArchiveExtractorCLI
             XElement manifest = XElement.Parse(xml);
 
             Directory.Delete(extractDestination,true);
+            List<XElement> xele = ManifestParser.GetOrganizationElements(manifest);
+
+            foreach (XElement x in xele)
+            {
+                System.Console.WriteLine(x);
+            }
+            System.Console.ReadKey();
         }
     }
 }
