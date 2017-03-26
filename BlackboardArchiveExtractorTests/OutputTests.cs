@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System.IO;
+using ArchiveExtractorBusinessCode;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CS411Crystal;
 
 namespace CS411Crystal.Tests
 {
@@ -10,22 +10,22 @@ namespace CS411Crystal.Tests
         [TestMethod]
         public void OutputTest()
         {
-            Output output = new Output(System.IO.Directory.GetCurrentDirectory() + "\testDir");
-            Assert.AreEqual(output.targetDir, System.IO.Directory.GetCurrentDirectory() + "\testDir");
+            var output = new Output(Directory.GetCurrentDirectory() + "\testDir");
+            Assert.AreEqual(output.TargetDir, Directory.GetCurrentDirectory() + "\testDir");
         }
 
         [TestMethod]
-        public void createDirTest()
+        public void CreateDirTest()
         {
             //Initialize and test creating directory
-            Output output = new Output(System.IO.Directory.GetCurrentDirectory() + "\testDir");
-            Assert.AreEqual(output.createDir(), true);
+            var output = new Output(Directory.GetCurrentDirectory() + "\testDir");
+            Assert.AreEqual(output.CreateDir(), true);
             //Delete directory
-            System.IO.Directory.Delete(System.IO.Directory.GetCurrentDirectory() + "\testDir");
+            Directory.Delete(Directory.GetCurrentDirectory() + "\testDir");
             //Check nonexistent directory location returns false
-            Assert.AreEqual(output.createDir("\\Doesntexist"), false);
+            Assert.AreEqual(output.CreateDir("\\Doesntexist"), false);
             //Check creating existing directory returns false
-            Assert.AreEqual(output.createDir(System.IO.Directory.GetCurrentDirectory()), false);
+            Assert.AreEqual(output.CreateDir(Directory.GetCurrentDirectory()), false);
         }
     }
 }

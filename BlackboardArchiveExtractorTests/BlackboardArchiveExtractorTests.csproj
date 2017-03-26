@@ -55,6 +55,10 @@
     <Compile Include="OutputTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArchiveExtractorBusinessCode\ArchiveExtractorBusinessCode.csproj">
+      <Project>{dc5eab2b-5b09-4097-8e4d-34d4606bfed5}</Project>
+      <Name>ArchiveExtractorBusinessCode</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CS411Crystal\BlackboardArchiveExtractor.csproj">
       <Project>{05F0B86F-AC45-4CDC-AE05-EAA602675072}</Project>
       <Name>BlackboardArchiveExtractor</Name>

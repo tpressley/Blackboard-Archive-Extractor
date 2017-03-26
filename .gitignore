@@ -1,5 +1,7 @@
-./*/bin
-./*/obj
+./*/bin/*
+./*/obj/*
+.vs/*
 BlackboardArchiveExtractorTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 CS411Crystal/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-
+CS411Crystal.v12.suo
+BlackboardArchiveExtractorTests/obj/*

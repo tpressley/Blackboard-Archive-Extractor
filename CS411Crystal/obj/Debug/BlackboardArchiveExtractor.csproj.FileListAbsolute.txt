@@ -9,3 +9,16 @@ C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debu
 Z:\computer_science\cs410\410Crystal~1\CS411Crystal\bin\Debug\CS411Crystal.exe.config
 Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\CS411Crystal.exe
 Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\CS411Crystal.pdb
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csprojResolveAssemblyReference.cache
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\CS411Crystal.Properties.Resources.resources
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\bin\Debug\CS411Crystal.exe
+Z:\computer_science\cs410\410Crystal~1\CS411Crystal\bin\Debug\CS411Crystal.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe.config
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csprojResolveAssemblyReference.cache
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.Properties.Resources.resources
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
