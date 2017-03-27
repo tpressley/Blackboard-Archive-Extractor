@@ -6,7 +6,6 @@ namespace CS411Crystal.Tests
     [TestClass]
     public class ParseLinksTests
     {
-
         /// <summary>
         /// Constructor Test
         /// </summary>
@@ -19,23 +18,33 @@ namespace CS411Crystal.Tests
         }
 
         /// <summary>
-        /// Request Test
+        /// Request Tests
         /// </summary>
-        [TestMethod]
+        [TestMethod()]
         public void RequestUrlTest()
         {
+            // C:\Users\Grant\Downloads\imsmanifest.xml
             // init and check valid uri
-            var parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
-            var isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive,true);
-            // check redirect
+            // alive page - 200
+            ParseLinks parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
+            bool isAlive = parser.RequestUrl();
+            Assert.AreEqual("http://www.cs.odu.edu/~gatkins/",parser.finalUri);
+            Assert.AreEqual(true, isAlive);
+            // check 404 page - 404
+            parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/blahblah404definitely");
+            isAlive = parser.RequestUrl();
+            Assert.AreEqual("", parser.finalUri);
+            Assert.AreEqual(false, isAlive);
+            // check redirect to an alive page - 200
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect.php");
             isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive, false);
-            // check infinite redirect error
+            Assert.AreEqual("http://www.cs.odu.edu/~mln/teaching/cs532-s17/test/pdfs.html", parser.finalUri);
+            Assert.AreEqual(true, isAlive);
+            // check infinite redirect error - 404
             parser = new ParseLinks("http://www.cs.odu.edu/~gatkins/cs532/redirect2.php");
             isAlive = parser.RequestUrl();
-            Assert.AreEqual(isAlive, false);
+            Assert.AreEqual("", parser.finalUri);
+            Assert.AreEqual(false, isAlive);
         }
 
         /// <summary>
@@ -45,14 +54,16 @@ namespace CS411Crystal.Tests
         [TestMethod]
         public void AbsolutePathTest()
         {
-            var parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
-            var relativePath = parser.IsAbsoluteUri("./test.html");
+            ParseLinks parser = new ParseLinks("./test.html");
+            bool relativePath = parser.IsAbsoluteUri();
             Assert.AreEqual(relativePath,false);
-
-            var absolutePath = parser.IsAbsoluteUri("http://www.cs.odu.edu");
+            
+            parser.uri = "http://www.cs.odu.edu";
+            bool absolutePath = parser.IsAbsoluteUri();
             Assert.AreEqual(absolutePath, true);
-
-            var errorTest = parser.IsAbsoluteUri("");
+            
+            parser.uri = "";
+            bool errorTest = parser.IsAbsoluteUri();
             Assert.AreEqual(errorTest, false);
         }
     }
