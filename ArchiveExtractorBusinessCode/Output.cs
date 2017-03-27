@@ -18,6 +18,7 @@ namespace ArchiveExtractorBusinessCode
         {
             try
             {
+                //Don't want to flood existing directory, or do we?
                 if (Directory.Exists(TargetDir))
                 {
                     return false;
@@ -47,8 +48,7 @@ namespace ArchiveExtractorBusinessCode
         }
         public bool CreateIndex(System.Collections.Generic.List<Object> elements)
         {
-            //Get dictionary since all elements may not be sorted
-            //Want to keep like files together
+            //var for elements in the table
             string tableContent = "";
             
             foreach(Object obj in elements)
