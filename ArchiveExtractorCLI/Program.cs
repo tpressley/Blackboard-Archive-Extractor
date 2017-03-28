@@ -37,6 +37,7 @@ namespace ArchiveExtractorCLI
             {
                 System.Console.WriteLine(x);
             }
+            Output.CreateIndex(xele, @"Z:\test");
             System.Console.ReadKey();
         }
     }

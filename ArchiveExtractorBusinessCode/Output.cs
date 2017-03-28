@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml.Linq;
 using System.Reflection;
 using System.Collections.Generic;
-
+using System.Linq;
 namespace ArchiveExtractorBusinessCode
 {
     public class Output
@@ -84,6 +84,53 @@ namespace ArchiveExtractorBusinessCode
                 return false;
             }
 
+            return true;
+        }
+
+        public static bool CreateIndex(List<XElement> elements, string targetDirectory)
+        {
+            //var for elements in the table
+            string tableContent = "";
+
+            foreach (XElement xElement in elements)
+            {
+                List<XElement> children = xElement.Descendants("title").ToList();
+                if (children.Count > 0)
+                {
+                    string title = children[0].Value;
+                    tableContent += "<h2>" + title + "</h2><br />";
+                }
+            }
+
+            //Grab index template
+            string indexString = "";
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
+
+            //using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            //{
+            //    using (StreamReader reader = new StreamReader(stream))
+            //    {
+            //        indexString = reader.ReadToEnd();
+            //    }
+            //}
+
+            ////Replace templating portions with variables retrieved
+            //indexString = indexString.Replace("{INDEX_TITLE}", "BAE Index File");
+            //indexString = indexString.Replace("{INDEX_TABLE_CONTENT}", tableContent);
+
+            //try
+            //{
+            //    StreamWriter file = new StreamWriter(targetDirectory + "\\index.html");
+            //    file.WriteLine(indexString);
+            //    file.Close();
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Error: " + e);
+            //    return false;
+            //}
+            System.IO.File.AppendAllText(targetDirectory + @"/index.html", tableContent);
             return true;
         }
     }
