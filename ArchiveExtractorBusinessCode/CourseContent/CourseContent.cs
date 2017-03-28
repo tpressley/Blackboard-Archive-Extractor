@@ -2,12 +2,12 @@
 
 namespace ArchiveExtractorBusinessCode
 {
-    internal class CourseContent
+    public class CourseContent
     {
         public string RefId { get; set; }
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
-        private List<CourseContent> children;
+        private List<CourseContent> children = new List<CourseContent>();
         public List<CourseContent> Children 
         {
             get { return children; }

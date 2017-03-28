@@ -2,6 +2,7 @@
 using System.IO;
 using System.Xml.Linq;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -46,12 +47,12 @@ namespace ArchiveExtractorBusinessCode
             }
             return true;
         }
-        public bool CreateIndex(System.Collections.Generic.List<Object> elements)
+        public bool CreateIndex(List<CourseContent> elements)
         {
             //var for elements in the table
             string tableContent = "";
-            
-            foreach(Object obj in elements)
+
+            foreach (CourseContent obj in elements)
             {
                 tableContent += "<tr><td>" + obj.ToString() + "</td><td>" + obj.GetType() + "</td></tr>\n";
             }
@@ -73,7 +74,7 @@ namespace ArchiveExtractorBusinessCode
 
             try
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(TargetDir + "\\index.html");
+                StreamWriter file = new StreamWriter(TargetDir + "\\index.html");
                 file.WriteLine(indexString);
                 file.Close();
             }
