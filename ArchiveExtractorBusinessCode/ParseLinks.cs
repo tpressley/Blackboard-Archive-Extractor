@@ -5,17 +5,17 @@ namespace ArchiveExtractorBusinessCode
 {
     public class ParseLinks
     {
-        public string Uri { get; set; }                 // initial URI passed to this class to start request
-        public string FinalUri { get; private set; }    // final URI that the response returns
+        public string Uri { get; set; }                 // initial Uri passed to this class to start request
+        public string FinalUri { get; private set; }    // final Uri that the response returns
 
-        public ParseLinks(string uri)
+        public ParseLinks(string Uri)
         {
-            Uri = uri;
+            Uri = Uri;
             FinalUri = "";
         }
 
         /// <summary>
-        /// HTTP GET request function for URI. 
+        /// HTTP GET request function for Uri. 
         /// Returns true if resp code is 200 otherwise considered dead.
         /// Some things it should be equipped to handle is Monitor Connectivity.
         /// </summary>
@@ -29,7 +29,7 @@ namespace ArchiveExtractorBusinessCode
                 request.UserAgent = "Mozila/5.0";
                 request.Timeout = 10000;    //10s
                 HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
-                finalUri = resp.ResponseUri.ToString();
+                FinalUri = resp.ResponseUri.ToString();
                 
                 var statusCode = (int)resp.StatusCode;
 
@@ -64,12 +64,12 @@ namespace ArchiveExtractorBusinessCode
         /// <summary>
         /// Helper to check if Uri is an absolute path
         /// </summary>
-        /// <param name="uri">URI to be checked if it is an absolute URI</param>
-        /// <returns>Boolean of whether it is a an absolute URI or not</returns>
+        /// <param name="Uri">Uri to be checked if it is an absolute Uri</param>
+        /// <returns>Boolean of whether it is a an absolute Uri or not</returns>
         public bool IsAbsoluteUri()
         {
             Uri result;
-            return Uri.TryCreate(this.uri, UriKind.Absolute, out result);
+            return System.Uri.TryCreate(this.Uri, UriKind.Absolute, out result);
         }
 
         private bool IsAlive(int code)

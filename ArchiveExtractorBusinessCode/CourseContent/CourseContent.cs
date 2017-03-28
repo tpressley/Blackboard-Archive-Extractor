@@ -7,7 +7,11 @@ namespace ArchiveExtractorBusinessCode
         public string RefId { get; set; }
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
-        public List<CourseContent> Children { get; } = new List<CourseContent>();
+        private List<CourseContent> children;
+        public List<CourseContent> Children 
+        {
+            get { return children; }
+        }
 
         public CourseContent()
         {

@@ -6,6 +6,5 @@ namespace ArchiveExtractorBusinessCode
     {
         public string InnerText { get; set; }
 
-        public List<IBlackBoardResource> Resources { get; } = new List<IBlackBoardResource>();
     }
 }

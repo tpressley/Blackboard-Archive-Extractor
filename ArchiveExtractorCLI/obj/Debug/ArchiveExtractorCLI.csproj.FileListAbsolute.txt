@@ -6,3 +6,11 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\bin\Debug\Archi
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.csprojResolveAssemblyReference.cache
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.exe
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.pdb
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe.config
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.pdb
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.dll
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.pdb
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.csprojResolveAssemblyReference.cache
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.exe
+Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.pdb
