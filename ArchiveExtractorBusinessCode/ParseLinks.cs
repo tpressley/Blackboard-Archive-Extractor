@@ -69,7 +69,7 @@ namespace ArchiveExtractorBusinessCode
         public bool IsAbsoluteUri()
         {
             Uri result;
-            return System.Uri.TryCreate(this.Uri, UriKind.Absolute, out result);
+            return System.Uri.TryCreate(Uri, UriKind.Absolute, out result);
         }
 
         private bool IsAlive(int code)

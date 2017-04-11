@@ -20,7 +20,7 @@ namespace CS411Crystal.Tests
         /// <summary>
         /// Request Tests
         /// </summary>
-        [TestMethod()]
+        [TestMethod]
         public void RequestUrlTest()
         {
             // C:\Users\Grant\Downloads\imsmanifest.xml

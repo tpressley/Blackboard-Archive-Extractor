@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 using System.Reflection;
@@ -47,6 +48,7 @@ namespace ArchiveExtractorBusinessCode
             }
             return true;
         }
+
         public bool CreateIndex(List<CourseContent> elements)
         {
             //var for elements in the table
@@ -54,7 +56,7 @@ namespace ArchiveExtractorBusinessCode
 
             foreach (CourseContent obj in elements)
             {
-                tableContent += "<tr><td>" + obj.ToString() + "</td><td>" + obj.GetType() + "</td></tr>\n";
+                tableContent += "<tr><td>" + obj + "</td><td>" + obj.GetType() + "</td></tr>\n";
             }
 
             //Grab index template

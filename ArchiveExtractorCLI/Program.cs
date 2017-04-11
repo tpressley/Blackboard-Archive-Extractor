@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 using ArchiveExtractorBusinessCode;
-using System.Security.Permissions;
 
 namespace ArchiveExtractorCLI
 {
@@ -35,7 +34,8 @@ namespace ArchiveExtractorCLI
 
             foreach (XElement x in xele)
             {
-                System.Console.WriteLine(x);
+                Console.WriteLine(x);
+                CourseContent cc = new CourseContent(x);
             }
             Output.CreateIndex(xele, @"Z:\test");
             System.Console.ReadKey();
