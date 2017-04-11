@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Xml.Linq;
 using System.Reflection;
 
 namespace ArchiveExtractorBusinessCode
@@ -46,14 +46,14 @@ namespace ArchiveExtractorBusinessCode
             }
             return true;
         }
-        public bool CreateIndex(System.Collections.Generic.List<Object> elements)
+        public bool CreateIndex(List<Object> elements)
         {
             //var for elements in the table
             string tableContent = "";
             
             foreach(Object obj in elements)
             {
-                tableContent += "<tr><td>" + obj.ToString() + "</td><td>" + obj.GetType() + "</td></tr>\n";
+                tableContent += "<tr><td>" + obj + "</td><td>" + obj.GetType() + "</td></tr>\n";
             }
 
             //Grab index template
@@ -73,7 +73,7 @@ namespace ArchiveExtractorBusinessCode
 
             try
             {
-                System.IO.StreamWriter file = new System.IO.StreamWriter(TargetDir + "\\index.html");
+                StreamWriter file = new StreamWriter(TargetDir + "\\index.html");
                 file.WriteLine(indexString);
                 file.Close();
             }

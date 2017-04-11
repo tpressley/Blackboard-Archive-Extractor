@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ArchiveExtractorBusinessCode
+﻿namespace ArchiveExtractorBusinessCode
 {
     internal class GenericContent : CourseContent
     {
