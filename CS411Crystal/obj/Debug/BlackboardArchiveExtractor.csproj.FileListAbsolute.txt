@@ -22,3 +22,6 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csprojResolveAssemblyReference.cache
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.Properties.Resources.resources
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
+C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe.config
+C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
+C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb

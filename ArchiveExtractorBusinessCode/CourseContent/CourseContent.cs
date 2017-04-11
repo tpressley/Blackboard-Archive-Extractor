@@ -47,6 +47,11 @@ namespace ArchiveExtractorBusinessCode
             this.RefId = XmlItemManifestElement.Attributes().ToList()[1].Value;
 
             //Recursively create child elements here
+            if (XmlItemManifestElement.Descendants("item").ToList().Any())
+            {
+                CourseContent newChild = new CourseContent(XmlItemManifestElement.Descendants("item").ToList()[0]);
+                children.Add(newChild);
+            }
         }
     }
 }
