@@ -5,6 +5,8 @@ using System.Xml.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+
 namespace ArchiveExtractorBusinessCode
 {
     public class Output
@@ -49,7 +51,7 @@ namespace ArchiveExtractorBusinessCode
             return true;
         }
 
-        public bool CreateIndex(List<CourseContent> elements)
+        public bool CreateRootIndex(List<CourseContent> elements)
         {
             //var for elements in the table
             string tableContent = "";
@@ -89,19 +91,16 @@ namespace ArchiveExtractorBusinessCode
             return true;
         }
 
-        public static bool CreateIndex(List<XElement> elements, string targetDirectory)
+        public static bool CreateRootIndex(List<CourseContent> content, string targetDirectory)
         {
+            Directory.CreateDirectory(targetDirectory);
             //var for elements in the table
-            string tableContent = "";
+            string pageHtml = "";
 
-            foreach (XElement xElement in elements)
+            foreach (CourseContent element in content)
             {
-                List<XElement> children = xElement.Descendants("title").ToList();
-                if (children.Count > 0)
-                {
-                    string title = children[0].Value;
-                    tableContent += "<h2>" + title + "</h2><br />";
-                }
+                pageHtml += "<a href='" + element.RefId + @".html'>" + element.Name + "</a><br />";
+                CreateResourceHtml(element.Children,targetDirectory + @"/" + element.RefId + @".html");
             }
 
             //Grab index template
@@ -109,30 +108,21 @@ namespace ArchiveExtractorBusinessCode
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
 
-            //using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            //{
-            //    using (StreamReader reader = new StreamReader(stream))
-            //    {
-            //        indexString = reader.ReadToEnd();
-            //    }
-            //}
+            
+            System.IO.File.AppendAllText(targetDirectory + @"/index.html", pageHtml);
+            return true;
+        }
 
-            ////Replace templating portions with variables retrieved
-            //indexString = indexString.Replace("{INDEX_TITLE}", "BAE Index File");
-            //indexString = indexString.Replace("{INDEX_TABLE_CONTENT}", tableContent);
-
-            //try
-            //{
-            //    StreamWriter file = new StreamWriter(targetDirectory + "\\index.html");
-            //    file.WriteLine(indexString);
-            //    file.Close();
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine("Error: " + e);
-            //    return false;
-            //}
-            System.IO.File.AppendAllText(targetDirectory + @"/index.html", tableContent);
+        public static bool CreateResourceHtml(List<CourseContent> content, string targetPath)
+        {
+            string pageHtml = "<html>";
+            foreach (CourseContent pageContent in content)
+            {
+                pageHtml += "<a href='" + pageContent.RefId + @".html'>" + pageContent.Name + "</a><br />";
+                CreateResourceHtml(pageContent.Children, Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html");
+            }
+            pageHtml += "</html>";
+            System.IO.File.AppendAllText(targetPath, pageHtml);
             return true;
         }
     }

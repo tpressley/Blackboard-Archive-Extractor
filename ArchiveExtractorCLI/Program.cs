@@ -31,13 +31,14 @@ namespace ArchiveExtractorCLI
 
             Directory.Delete(extractDestination,true);
             List<XElement> xele = ManifestParser.GetOrganizationElements(manifest);
-
+            List<CourseContent> course = new List<CourseContent>();
             foreach (XElement x in xele)
             {
                 Console.WriteLine(x);
                 CourseContent cc = new CourseContent(x);
+                course.Add(cc);
             }
-            Output.CreateIndex(xele, @"Z:\test");
+            Output.CreateRootIndex(course, extractDestination);
             System.Console.ReadKey();
         }
     }

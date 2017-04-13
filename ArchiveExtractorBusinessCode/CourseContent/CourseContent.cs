@@ -49,9 +49,17 @@ namespace ArchiveExtractorBusinessCode
             //Recursively create child elements here
             if (XmlItemManifestElement.Descendants("item").ToList().Any())
             {
-                CourseContent newChild = new CourseContent(XmlItemManifestElement.Descendants("item").ToList()[0]);
-                children.Add(newChild);
+                foreach (XElement xmlChildElement in XmlItemManifestElement.Descendants("item").ToList())
+                {
+                    CourseContent newChild = new CourseContent(xmlChildElement);
+                    children.Add(newChild);
+                }
             }
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
