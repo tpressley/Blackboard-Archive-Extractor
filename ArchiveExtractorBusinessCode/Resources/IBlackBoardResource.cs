@@ -1,6 +1,6 @@
 ﻿namespace ArchiveExtractorBusinessCode
 {
-    internal interface IBlackBoardResource
+    public interface IBlackBoardResource
     {
     }
 }

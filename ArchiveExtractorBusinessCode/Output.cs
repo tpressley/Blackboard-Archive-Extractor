@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using ArchiveExtractorBusinessCode.Resources;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -120,7 +121,12 @@ namespace ArchiveExtractorBusinessCode
             {
                 pageHtml += "<a href='" + pageContent.RefId + @".html'>" + pageContent.Name + "</a><br />";
                 CreateResourceHtml(pageContent.Children, Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html");
+                foreach (TextResource res in pageContent.Resources)
+                {
+                    pageHtml += res.Text;
+                }
             }
+            
             pageHtml += "</html>";
             System.IO.File.AppendAllText(targetPath, pageHtml);
             return true;

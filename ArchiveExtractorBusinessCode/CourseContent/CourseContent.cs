@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using ArchiveExtractorBusinessCode.Resources;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -11,11 +14,11 @@ namespace ArchiveExtractorBusinessCode
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
         private List<CourseContent> children = new List<CourseContent>();
+        public readonly List<IBlackBoardResource> Resources = new List<IBlackBoardResource>();
         public List<CourseContent> Children 
         {
             get { return children; }
         }
-
         public CourseContent()
         {
             //Generic Constructor to make the compiler happy
@@ -37,7 +40,7 @@ namespace ArchiveExtractorBusinessCode
             Name = name;
         }
 
-        public CourseContent(XElement XmlItemManifestElement)
+        public CourseContent(XElement XmlItemManifestElement, string tempLocation)
         {
             if (XmlItemManifestElement.Descendants("title").ToList().Any())
             {
@@ -51,9 +54,13 @@ namespace ArchiveExtractorBusinessCode
             {
                 foreach (XElement xmlChildElement in XmlItemManifestElement.Descendants("item").ToList())
                 {
-                    CourseContent newChild = new CourseContent(xmlChildElement);
-                    children.Add(newChild);
+                    children.Add(new CourseContent(xmlChildElement, tempLocation));
                 }
+            }
+
+            if (File.Exists(tempLocation + @"/" + RefId + ".dat"))
+            {
+                Resources.Add(new TextResource(tempLocation + @"/" + RefId + ".dat"));
             }
         }
 
