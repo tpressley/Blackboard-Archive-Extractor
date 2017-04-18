@@ -24,7 +24,11 @@ namespace ArchiveExtractorCLI
                 Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
                 return;
             }
-            Directory.Delete(tempLocation, true);
+            if (Directory.Exists(tempLocation))
+            {
+                Directory.Delete(tempLocation, true);
+            }
+            
             Console.WriteLine("Extracting Zip...");
             Archive.ExtractArchive(archiveLocation, tempLocation);
             Console.WriteLine("Done");
