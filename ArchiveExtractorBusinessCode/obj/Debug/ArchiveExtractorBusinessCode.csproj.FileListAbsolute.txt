@@ -7,3 +7,8 @@ Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorBusinessCode\obj\Debug\Ar
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.pdb
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorBusinessCode\bin\Debug\ArchiveExtractorBusinessCode.dll
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorBusinessCode\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorBusinessCode\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorBusinessCode\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.csprojResolveAssemblyReference.cache
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.pdb

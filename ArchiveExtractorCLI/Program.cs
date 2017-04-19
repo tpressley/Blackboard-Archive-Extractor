@@ -13,6 +13,7 @@ namespace ArchiveExtractorCLI
             var archiveLocation = "";
             var extractDestination = "";
             var tempLocation = "";
+
             try
             {
                 archiveLocation = args[0];
@@ -34,7 +35,7 @@ namespace ArchiveExtractorCLI
             {
                 Archive.ExtractArchive(archiveLocation, tempLocation);
             }
-            catch(System.IO.FileNotFoundException)
+            catch(FileNotFoundException)
             {
                 Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
                 Console.WriteLine("Error BAE001: File Not found");
