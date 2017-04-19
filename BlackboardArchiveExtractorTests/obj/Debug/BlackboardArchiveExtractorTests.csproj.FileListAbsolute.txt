@@ -25,3 +25,5 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\BlackboardArchiveExtractorTests\bin
 C:\cygwin64\home\Tristan Pressley\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.dll
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb

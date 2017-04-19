@@ -30,7 +30,16 @@ namespace ArchiveExtractorCLI
             }
             
             Console.WriteLine("Extracting Zip...");
-            Archive.ExtractArchive(archiveLocation, tempLocation);
+            try
+            {
+                Archive.ExtractArchive(archiveLocation, tempLocation);
+            }
+            catch(System.IO.FileNotFoundException)
+            {
+                Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
+                Console.WriteLine("Error BAE001: File Not found");
+                return;
+            }
             Console.WriteLine("Done");
             var xml = File.ReadAllText(tempLocation + "/imsmanifest.xml");
             XElement manifest = XElement.Parse(xml);
