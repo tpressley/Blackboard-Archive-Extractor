@@ -25,3 +25,6 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardAr
 C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe.config
 C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
 C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.BlackboardExtractorMain.resources
