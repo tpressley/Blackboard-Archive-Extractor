@@ -8,16 +8,13 @@ namespace ArchiveExtractorBusinessCode
     {
         public static List<XElement> GetOrganizationElements(XElement manifestXml)
         {
-            List<XElement> items = new List<XElement>();
-            items = manifestXml.Element("organizations").Element("organization").Elements("item").ToList();
-            return items;
+            return manifestXml.Element("organizations").Element("organization").Elements("item").ToList();
         }
 
         public static List<XElement> GetResourceElements(XElement manifestXml)
         {
-            List<XElement> resources = new List<XElement>();
-            resources = manifestXml.Element("resources").Elements("resource").ToList();
-            return resources;
+            
+            return manifestXml.Element("resources").Elements("resource").ToList();
         }
     }
 }
