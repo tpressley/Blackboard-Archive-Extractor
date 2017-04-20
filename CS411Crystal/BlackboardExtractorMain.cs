@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -12,10 +13,19 @@ namespace CS411Crystal
         public BlackboardExtractorMain()
         {
             InitializeComponent();
+
+            progressBar.Maximum = 100;
         }
 
         private void btnExtract_Click(object sender, System.EventArgs e)
         {
+            backgroundWorker.RunWorkerAsync();
+        }
+
+        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            BackgroundWorker senderWorker = sender as BackgroundWorker;
+
             var archiveLocation = "";
             var extractDestination = "";
             var tempLocation = "";
@@ -28,25 +38,35 @@ namespace CS411Crystal
             {
                 Directory.Delete(tempLocation, true);
             }
-
-            Console.WriteLine("Extracting Zip...");
+            
             Archive.ExtractArchive(archiveLocation, tempLocation);
-            Console.WriteLine("Done");
             var xml = File.ReadAllText(tempLocation + "/imsmanifest.xml");
             XElement manifest = XElement.Parse(xml);
 
 
             List<XElement> xele = ManifestParser.GetOrganizationElements(manifest);
             List<CourseContent> course = new List<CourseContent>();
+            int count = 0;
             foreach (XElement x in xele)
             {
-                Console.WriteLine(x);
+                count++;
                 CourseContent cc = new CourseContent(x, tempLocation);
                 course.Add(cc);
+
+                double progress = 1.0 * count / (1.0 * xele.Count);
+                senderWorker.ReportProgress(0,progress);
             }
             Output.CreateRootIndex(course, extractDestination);
             Directory.Delete(tempLocation, true);
-            System.Console.ReadKey();
+
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            double percent = (double)(e.UserState);
+            int progress = (int)(percent * 100);
+            progressBar.Value = progress;
+
         }
     }
 }

@@ -33,6 +33,9 @@ namespace CS411Crystal
             this.tbxSourcePath = new System.Windows.Forms.TextBox();
             this.tbxDestination = new System.Windows.Forms.TextBox();
             this.btnExtract = new System.Windows.Forms.Button();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // tbxSourcePath
@@ -61,11 +64,25 @@ namespace CS411Crystal
             this.btnExtract.UseVisualStyleBackColor = true;
             this.btnExtract.Click += new System.EventHandler(this.btnExtract_Click);
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(12, 38);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(211, 23);
+            this.progressBar.TabIndex = 3;
+            // 
             // BlackboardExtractorMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 74);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnExtract);
             this.Controls.Add(this.tbxDestination);
             this.Controls.Add(this.tbxSourcePath);
@@ -81,6 +98,9 @@ namespace CS411Crystal
         private System.Windows.Forms.TextBox tbxSourcePath;
         private System.Windows.Forms.TextBox tbxDestination;
         private System.Windows.Forms.Button btnExtract;
+        private BackgroundWorker backgroundWorker;
+        private BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 
