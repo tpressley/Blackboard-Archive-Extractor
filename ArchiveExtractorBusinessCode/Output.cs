@@ -101,7 +101,7 @@ namespace ArchiveExtractorBusinessCode
             foreach (CourseContent element in content)
             {
                 pageHtml += "<a href='" + element.RefId + @".html'>" + element.Name + "</a><br />";
-                CreateResourceHtml(element.Children,targetDirectory + @"/" + element.RefId + @".html");
+                CreateResourceHtml(element.Children, element.Resources, targetDirectory + @"/" + element.RefId + @".html");
             }
 
             //Grab index template
@@ -114,19 +114,23 @@ namespace ArchiveExtractorBusinessCode
             return true;
         }
 
-        public static bool CreateResourceHtml(List<CourseContent> content, string targetPath)
+        public static bool CreateResourceHtml(List<CourseContent> content, List<BlackBoardResource> resources, string targetPath)
         {
             string pageHtml = "<html>";
             foreach (CourseContent pageContent in content)
             {
                 pageHtml += "<a href='" + pageContent.RefId + @".html'>" + pageContent.Name + "</a><br />";
-                CreateResourceHtml(pageContent.Children, Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html");
-                foreach (TextResource res in pageContent.Resources)
-                {
-                    pageHtml += res.Text;
-                }
+                CreateResourceHtml(pageContent.Children, pageContent.Resources, Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html");
+                //foreach (BlackBoardResource res in pageContent.Resources)
+                //{
+                //    pageHtml += res.Text;
+                //}
             }
-            
+            foreach (BlackBoardResource res in resources)
+            {
+                pageHtml += res.Text;
+                pageHtml += "<hr>";
+            }
             pageHtml += "</html>";
             System.IO.File.AppendAllText(targetPath, pageHtml);
             return true;

@@ -16,8 +16,8 @@ namespace ArchiveExtractorBusinessCode
         public static List<XElement> GetResourceElements(XElement manifestXml)
         {
             List<XElement> resources = new List<XElement>();
-            resources = manifestXml.Elements("resource").ToList();
-            return null;
+            resources = manifestXml.Element("resources").Elements("resource").ToList();
+            return resources;
         }
     }
 }

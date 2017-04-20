@@ -14,7 +14,8 @@ namespace ArchiveExtractorBusinessCode
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
         private List<CourseContent> children = new List<CourseContent>();
-        public readonly List<IBlackBoardResource> Resources = new List<IBlackBoardResource>();
+        public readonly List<BlackBoardResource> Resources = new List<BlackBoardResource>();
+
         public List<CourseContent> Children 
         {
             get { return children; }

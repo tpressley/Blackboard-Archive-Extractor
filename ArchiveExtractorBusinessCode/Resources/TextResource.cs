@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using System.IO;
 namespace ArchiveExtractorBusinessCode.Resources
 {
-    class TextResource : IBlackBoardResource
+    class TextResource : BlackBoardResource
     {
         public string RefId { get; set; }
-        public string Text { get; set; }
+        public override string Text { get; set; }
         public string PathToResourceFile { get; set; }
+        public string Url { get; set; }
 
         public TextResource(string text, string refId)
         {

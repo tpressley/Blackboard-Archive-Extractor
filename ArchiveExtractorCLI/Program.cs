@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net.Mail;
 using System.Xml.Linq;
 using ArchiveExtractorBusinessCode;
 
@@ -37,11 +39,23 @@ namespace ArchiveExtractorCLI
 
             
             List<XElement> xele = ManifestParser.GetOrganizationElements(manifest);
+            List<XElement> xres = ManifestParser.GetResourceElements(manifest);
+
             List<CourseContent> course = new List<CourseContent>();
             foreach (XElement x in xele)
             {
                 Console.WriteLine(x);
                 CourseContent cc = new CourseContent(x, tempLocation);
+
+                if (cc.Name == "Announcements")
+                {
+                    foreach (XElement res in  xres.Where(f => f.Attribute("type").Value == "resource/x-bb-announcement"))
+                    {
+                        string path = tempLocation + "/" + res.Attribute("identifier").Value + ".dat";
+                        cc.Resources.Add(new AnnouncementResource(path));
+                    }
+                }
+
                 course.Add(cc);
             }
             Output.CreateRootIndex(course, extractDestination);
