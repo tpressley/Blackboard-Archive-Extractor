@@ -52,7 +52,7 @@ namespace CS411Crystal.Properties
             {
                 if ((resourceMan == null))
                 {
-                    var temp = new ResourceManager("CS411Crystal.Properties.Resources", typeof(Resources).Assembly);
+                    ResourceManager temp = new ResourceManager("CS411Crystal.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -12,7 +12,7 @@ namespace CS411Crystal.Tests
         [TestMethod]
         public void ParseLinksTest()
         {
-            var parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
+            ParseLinks parser = new ParseLinks("http://www.cs.odu.edu/~gatkins");
             Assert.AreEqual(parser.Uri, "http://www.cs.odu.edu/~gatkins");
             Assert.AreEqual(parser.FinalUri, "");
         }

@@ -10,9 +10,9 @@ namespace ArchiveExtractorCLI
     {
         private static void Main(string[] args)
         {
-            var archiveLocation = "";
-            var extractDestination = "";
-            var tempLocation = "";
+            string archiveLocation = "";
+            string extractDestination = "";
+            string tempLocation = "";
 
             try
             {
@@ -31,31 +31,16 @@ namespace ArchiveExtractorCLI
             }
             
             Console.WriteLine("Extracting Zip...");
-            try
-            {
 
-                int count = 1;
-                string fileNameOnly = Path.GetFileNameWithoutExtension(tempLocation);
-                string extension = Path.GetExtension(tempLocation);
-                string path = Path.GetDirectoryName(tempLocation);
-                string newFullPath = tempLocation;
 
-                while (File.Exists(tempLocation))
-                {
-                    Console.WriteLine(count);
-                    string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
-                    tempLocation = Path.Combine(path, tempFileName + extension);
-                }
-                Archive.ExtractArchive(archiveLocation, tempLocation);
-            }
-            catch(FileNotFoundException)
+            if (!ExtractArchive(archiveLocation, ref tempLocation, ref extractDestination))
             {
                 Console.WriteLine("Usage: ArchiveExtractor 'ArchiveToExtract' 'TargetLocation'");
                 Console.WriteLine("Error BAE001: File Not found");
-                return;
+                return; 
             }
 
-            var xml = File.ReadAllText(tempLocation + "/imsmanifest.xml");
+            string xml = File.ReadAllText(tempLocation + "/imsmanifest.xml");
             XElement manifest = XElement.Parse(xml);
 
             
@@ -70,6 +55,39 @@ namespace ArchiveExtractorCLI
             Output.CreateRootIndex(course, extractDestination);
             Directory.Delete(tempLocation, true);
             System.Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Extracts the archive and returns true if successful
+        /// </summary>
+        /// <param name="archiveLocation"></param>
+        /// <param name="tempLocation"></param>
+        /// <param name="extractDestination"></param>
+        /// <returns></returns>
+        private static bool ExtractArchive(string archiveLocation, ref string tempLocation, ref string extractDestination)
+        {
+            try
+            {
+                int count = 0;
+                string fileNameOnly = Path.GetFileNameWithoutExtension(tempLocation);
+                string extension = Path.GetExtension(tempLocation);
+                string path = Path.GetDirectoryName(tempLocation);
+                string newFullPath = tempLocation;
+                string originalDesination = extractDestination;
+                while (Directory.Exists(extractDestination))
+                {
+                    Console.WriteLine(count);
+                    string tempFileName = originalDesination + "(" + (++count) + ")";
+                    extractDestination = tempFileName;
+                    tempLocation = extractDestination + @"/Archive";
+                }
+                Archive.ExtractArchive(archiveLocation, tempLocation);
+            }
+            catch (FileNotFoundException)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace ArchiveExtractorBusinessCode.Resources
             if (xele.Descendants("URL").Any())
             {
                 List<XElement> urls = xele.Descendants("URL").ToList();
-                for(var i = 0; i < urls.Count; i++)
+                for(int i = 0; i < urls.Count; i++)
                 {
                     string val = urls[i].Attribute("value").Value;
                     if (val.Length != 0)
