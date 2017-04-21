@@ -23,6 +23,8 @@ namespace ArchiveExtractorBusinessCode.Resources
         {
             string xml = File.ReadAllText(PathToResourceFile);
             XElement xele = XElement.Parse(xml);
+            List<XElement> urls = xele.Descendants("URL").ToList();
+
             if (xele.Descendants("TEXT").Any())
             {
                 List<XElement> texts = xele.Descendants("TEXT").ToList();
@@ -35,19 +37,25 @@ namespace ArchiveExtractorBusinessCode.Resources
             RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
             this.PathToResourceFile = PathToResourceFile;
 
+            if (urls.Any())
+            {
+                string val = urls[0].Attribute("value").Value;
+                if (val.Length > 0)
+                    Url = urls[0].Attribute("value").Value;
+            }
+
             // arg flag
             if (linkArgs.checkLinks)
             {
                 if (xele.Descendants("URL").Any())
                 {
-                    List<XElement> urls = xele.Descendants("URL").ToList();
                     for(int i = 0; i < urls.Count; i++)
                     {
                         string val = urls[i].Attribute("value").Value;
 
                         if (val.Length != 0)
                         {
-                            Url = urls[0].Attribute("value").Value;
+                            
                             // static dictionary
                             var dict = UriDictionary.UriDict;
 
