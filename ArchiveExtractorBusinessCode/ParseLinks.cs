@@ -10,8 +10,8 @@ namespace ArchiveExtractorBusinessCode
 
         public ParseLinks(string Uri)
         {
-            Uri = Uri;
-            FinalUri = "";
+            this.Uri = Uri;
+            this.FinalUri = "";
         }
 
         /// <summary>

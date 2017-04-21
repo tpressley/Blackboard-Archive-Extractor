@@ -20,6 +20,7 @@ C:\Users\dhaslam\Source\Repos\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe.config
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csprojResolveAssemblyReference.cache
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.Properties.Resources.resources
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
