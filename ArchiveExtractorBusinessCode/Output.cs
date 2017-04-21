@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using ArchiveExtractorBusinessCode.Resources;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -84,7 +85,10 @@ namespace ArchiveExtractorBusinessCode
 
             if (content.Count <= 0 && resources.All(f => string.IsNullOrEmpty(f.Text)))
             {
-                return false;
+                if (resources.All(f => string.IsNullOrEmpty(((TextResource)f).Url)))
+                {
+                    return false;
+                }
             }
 
             foreach (CourseContent pageContent in content)
@@ -107,7 +111,14 @@ namespace ArchiveExtractorBusinessCode
                     pageHtml += res.Text;
                     pageHtml += "<hr>";
                 }
+
+                var resource = res as TextResource;
+                if (!string.IsNullOrEmpty(resource?.Url))
+                {
+                    pageHtml += "<a href='" + resource.Url + "'> Link </a>";
+                }
             }
+            
             pageHtml += "</html>";
             if (!File.Exists(targetPath))
             {

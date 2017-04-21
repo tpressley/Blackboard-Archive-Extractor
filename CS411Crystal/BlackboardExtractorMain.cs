@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Security.Policy;
 using System.Windows.Forms;
 using System.Xml.Linq;
 // ReSharper disable once RedundantUsingDirective
@@ -13,7 +14,6 @@ namespace CS411Crystal
     {
         public BlackboardExtractorMain()
         {
-            InitializeComponent();
 
             progressBar.Maximum = 100;
         }

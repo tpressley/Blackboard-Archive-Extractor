@@ -48,17 +48,19 @@ namespace ArchiveExtractorBusinessCode.Resources
                         if (parser.IsAbsoluteUri())
                         {
                             Console.WriteLine("Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
-                            var isAlive = parser.RequestUrl();
-                            Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
-                            if (!isAlive)
-                            {
-                                Console.WriteLine(val, "For resource", RefId, "is not alive.");
-                                // Remove element if considered dead
-                                //xele.Descendants("URL").Where(x => x.Value == target).Remove();
-                            }
+                            //var isAlive = parser.RequestUrl();
+                            //Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
+                            //if (!isAlive)
+                            //{
+                            //    Console.WriteLine(val, "For resource", RefId, "is not alive.");
+                            //    // Remove element if considered dead
+                            //    //xele.Descendants("URL").Where(x => x.Value == target).Remove();
+                            //}
+                            Url = urls[0].Attribute("value").Value;
                         }
                     }
                 }
+                
             }
         }
     }
