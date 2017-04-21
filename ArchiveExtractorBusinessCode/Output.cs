@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Linq;
-using System.Reflection;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+using System.Reflection;
 using ArchiveExtractorBusinessCode.Resources;
 
 namespace ArchiveExtractorBusinessCode
@@ -28,7 +25,7 @@ namespace ArchiveExtractorBusinessCode
                 {
                     return false;
                 }
-                var dirInfo = Directory.CreateDirectory(TargetDir);
+                DirectoryInfo dirInfo = Directory.CreateDirectory(TargetDir);
             }
             catch (Exception e)
             {
@@ -52,46 +49,6 @@ namespace ArchiveExtractorBusinessCode
             return true;
         }
 
-        public bool CreateRootIndex(List<CourseContent> elements)
-        {
-            //var for elements in the table
-            string tableContent = "";
-
-            foreach (CourseContent obj in elements)
-            {
-                tableContent += "<tr><td>" + obj + "</td><td>" + obj.GetType() + "</td></tr>\n";
-            }
-
-            //Grab index template
-            string indexString = "";
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                indexString = reader.ReadToEnd();
-            }
-
-            //Replace templating portions with variables retrieved
-            indexString = indexString.Replace("{INDEX_TITLE}", "BAE Index File");
-            indexString = indexString.Replace("{INDEX_TABLE_CONTENT}", tableContent);
-
-            try
-            {
-                StreamWriter file = new StreamWriter(TargetDir + "\\index.html");
-                file.WriteLine(indexString);
-                file.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e);
-                return false;
-            }
-
-            return true;
-        }
-
         public static bool CreateRootIndex(List<CourseContent> content, string targetDirectory)
         {
             Directory.CreateDirectory(targetDirectory);
@@ -100,35 +57,73 @@ namespace ArchiveExtractorBusinessCode
 
             foreach (CourseContent element in content)
             {
-                pageHtml += "<a href='" + element.RefId + @".html'>" + element.Name + "</a><br />";
-                CreateResourceHtml(element.Children,targetDirectory + @"/" + element.RefId + @".html");
+
+                if (CreateResourceHtml(element.Children, element.Resources,
+                    targetDirectory + @"/" + element.RefId + @".html"))
+                {
+                    pageHtml += "<a href='" + element.RefId + @".html'>" + element.Name + "</a><br />";
+                }
+                else
+                {
+                    pageHtml += "<div>" + element.Name + "</div>";
+                }
             }
 
             //Grab index template
             string indexString = "";
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
 
             
-            System.IO.File.AppendAllText(targetDirectory + @"/index.html", pageHtml);
+            File.AppendAllText(targetDirectory + @"/index.html", pageHtml);
             return true;
         }
 
-        public static bool CreateResourceHtml(List<CourseContent> content, string targetPath)
+        public static bool CreateResourceHtml(List<CourseContent> content, List<BlackBoardResource> resources, string targetPath)
         {
             string pageHtml = "<html>";
+
+            if (content.Count <= 0 && resources.All(f => string.IsNullOrEmpty(f.Text)))
+            {
+                if (resources.All(f => string.IsNullOrEmpty(((TextResource)f).Url)))
+                {
+                    return false;
+                }
+            }
+
             foreach (CourseContent pageContent in content)
             {
-                pageHtml += "<a href='" + pageContent.RefId + @".html'>" + pageContent.Name + "</a><br />";
-                CreateResourceHtml(pageContent.Children, Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html");
-                foreach (TextResource res in pageContent.Resources)
+                if (CreateResourceHtml(pageContent.Children, pageContent.Resources,
+                    Path.GetDirectoryName(targetPath) + @"/" + pageContent.RefId + @".html"))
+                {
+                    pageHtml += "<a href='" + pageContent.RefId + @".html'>" + pageContent.Name + "</a><br />";
+                }
+                else
+                {
+                    pageHtml += "<div>" + pageContent.Name + "</div>";
+                }
+            }
+
+            foreach (BlackBoardResource res in resources)
+            {
+                if (!string.IsNullOrEmpty(res.Text))
                 {
                     pageHtml += res.Text;
+                    pageHtml += "<hr>";
+                }
+
+                var resource = res as TextResource;
+                if (!string.IsNullOrEmpty(resource?.Url))
+                {
+                    pageHtml += "<a href='" + resource.Url + "'> Link </a>";
                 }
             }
             
             pageHtml += "</html>";
-            System.IO.File.AppendAllText(targetPath, pageHtml);
+            if (!File.Exists(targetPath))
+            {
+                File.AppendAllText(targetPath, pageHtml);
+            }
             return true;
         }
     }

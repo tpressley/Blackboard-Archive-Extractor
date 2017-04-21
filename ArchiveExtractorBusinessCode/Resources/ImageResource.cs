@@ -2,7 +2,7 @@
 
 namespace ArchiveExtractorBusinessCode
 {
-    internal class ImageResource : IBlackBoardResource
+    internal class ImageResource : BlackBoardResource
     {
         public Image Picture { get; set; }
     }

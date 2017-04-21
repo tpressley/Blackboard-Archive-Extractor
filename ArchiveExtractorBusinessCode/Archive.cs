@@ -6,7 +6,7 @@ namespace ArchiveExtractorBusinessCode
     {
         public static void ExtractArchive(string pathToArchive, string pathToExtract)
         {
-            ZipFile.ExtractToDirectory(pathToArchive,pathToExtract);
+            ZipFile.ExtractToDirectory(pathToArchive, pathToExtract);
         }
     }
 }

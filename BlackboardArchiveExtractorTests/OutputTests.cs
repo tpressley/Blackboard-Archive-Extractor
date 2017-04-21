@@ -10,7 +10,7 @@ namespace CS411Crystal.Tests
         [TestMethod]
         public void OutputTest()
         {
-            var output = new Output(Directory.GetCurrentDirectory() + "\testDir");
+            Output output = new Output(Directory.GetCurrentDirectory() + "\testDir");
             Assert.AreEqual(output.TargetDir, Directory.GetCurrentDirectory() + "\testDir");
         }
 
@@ -18,7 +18,7 @@ namespace CS411Crystal.Tests
         public void CreateDirTest()
         {
             //Initialize and test creating directory
-            var output = new Output(Directory.GetCurrentDirectory() + "\testDir");
+            Output output = new Output(Directory.GetCurrentDirectory() + "\testDir");
             Assert.AreEqual(output.CreateDir(), true);
             //Delete directory
             Directory.Delete(Directory.GetCurrentDirectory() + "\testDir");

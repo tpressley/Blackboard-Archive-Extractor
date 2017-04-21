@@ -10,8 +10,8 @@ namespace ArchiveExtractorBusinessCode
 
         public ParseLinks(string Uri)
         {
-            Uri = Uri;
-            FinalUri = "";
+            this.Uri = Uri;
+            this.FinalUri = "";
         }
 
         /// <summary>
@@ -24,14 +24,14 @@ namespace ArchiveExtractorBusinessCode
         {
             try
             {
-                var request = (HttpWebRequest)WebRequest.Create(Uri);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Uri);
                 request.AllowAutoRedirect = true;
                 request.UserAgent = "Mozila/5.0";
                 request.Timeout = 10000;    //10s
                 HttpWebResponse resp = (HttpWebResponse)request.GetResponse();
                 FinalUri = resp.ResponseUri.ToString();
                 
-                var statusCode = (int)resp.StatusCode;
+                int statusCode = (int)resp.StatusCode;
 
                 if (IsAlive(statusCode))
                 {
@@ -46,10 +46,10 @@ namespace ArchiveExtractorBusinessCode
                 if (e.Status == WebExceptionStatus.ProtocolError)
                 {   
 
-                    var response = e.Response as HttpWebResponse;
+                    HttpWebResponse response = e.Response as HttpWebResponse;
                     if (response != null)
                     {
-                        var statusCode = (int)response.StatusCode;
+                        int statusCode = (int)response.StatusCode;
                         //Console.WriteLine("HTTP Status Code: " + statusCode);
                         return IsAlive(statusCode);
                     }

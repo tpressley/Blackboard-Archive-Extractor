@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using ArchiveExtractorBusinessCode.Resources;
 
@@ -14,7 +13,8 @@ namespace ArchiveExtractorBusinessCode
         public string Name { get; set; }
         public CourseContent Parent { get; set; }
         private List<CourseContent> children = new List<CourseContent>();
-        public readonly List<IBlackBoardResource> Resources = new List<IBlackBoardResource>();
+        public readonly List<BlackBoardResource> Resources = new List<BlackBoardResource>();
+
         public List<CourseContent> Children 
         {
             get { return children; }
@@ -44,10 +44,10 @@ namespace ArchiveExtractorBusinessCode
         {
             if (XmlItemManifestElement.Descendants("title").ToList().Any())
             {
-                this.Name = XmlItemManifestElement.Descendants("title").ToList()[0].Value;
+                Name = XmlItemManifestElement.Descendants("title").ToList()[0].Value;
             }
-            this.Id = XmlItemManifestElement.Attributes().ToList()[0].Value;
-            this.RefId = XmlItemManifestElement.Attributes().ToList()[1].Value;
+            Id = XmlItemManifestElement.Attributes().ToList()[0].Value;
+            RefId = XmlItemManifestElement.Attributes().ToList()[1].Value;
 
             //Recursively create child elements here
             if (XmlItemManifestElement.Descendants("item").ToList().Any())
