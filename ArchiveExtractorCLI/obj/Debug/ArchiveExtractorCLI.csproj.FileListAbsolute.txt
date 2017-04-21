@@ -14,3 +14,11 @@ Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\bin\Debug\ArchiveExtr
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.csprojResolveAssemblyReference.cache
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.exe
 Z:\computer_science\cs410\410Crystal~1\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.csprojResolveAssemblyReference.cache
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.exe
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\obj\Debug\ArchiveExtractorCLI.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.exe.config
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\ArchiveExtractorCLI\bin\Debug\ArchiveExtractorCLI.pdb

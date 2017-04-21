@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Linq;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using ArchiveExtractorBusinessCode.Resources;
 
 namespace ArchiveExtractorBusinessCode
 {
@@ -28,7 +23,7 @@ namespace ArchiveExtractorBusinessCode
                 {
                     return false;
                 }
-                var dirInfo = Directory.CreateDirectory(TargetDir);
+                DirectoryInfo dirInfo = Directory.CreateDirectory(TargetDir);
             }
             catch (Exception e)
             {
@@ -64,8 +59,8 @@ namespace ArchiveExtractorBusinessCode
 
             //Grab index template
             string indexString = "";
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
@@ -106,8 +101,8 @@ namespace ArchiveExtractorBusinessCode
 
             //Grab index template
             string indexString = "";
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "CS411Crystal.ArchiveExtractorBusinessCode.StaticFiles.index.html";
 
             
             System.IO.File.AppendAllText(targetDirectory + @"/index.html", pageHtml);

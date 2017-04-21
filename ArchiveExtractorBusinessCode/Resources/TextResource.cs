@@ -35,6 +35,20 @@ namespace ArchiveExtractorBusinessCode.Resources
             }
             this.RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
             this.PathToResourceFile = PathToResourceFile;
+
+            if (xele.Descendants("URL").Any())
+            {
+                List<XElement> urls = xele.Descendants("URL").ToList();
+                for(int i = 0; i < urls.Count; i++)
+                {
+                    ParseLinks parser = new ParseLinks(urls[i].Value);
+                    if (parser.IsAbsoluteUri())
+                    {
+                        bool isAlive = parser.RequestUrl();
+                        Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
+                    }
+                }
+            }
         }
     }
 }
