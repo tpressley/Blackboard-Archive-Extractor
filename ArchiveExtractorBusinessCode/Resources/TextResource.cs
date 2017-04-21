@@ -38,12 +38,12 @@ namespace ArchiveExtractorBusinessCode.Resources
             if (xele.Descendants("URL").Any())
             {
                 List<XElement> urls = xele.Descendants("URL").ToList();
-                for(var i = 0; i < urls.Count; i++)
+                for(int i = 0; i < urls.Count; i++)
                 {
                     ParseLinks parser = new ParseLinks(urls[i].Value);
                     if (parser.IsAbsoluteUri())
                     {
-                        var isAlive = parser.RequestUrl();
+                        bool isAlive = parser.RequestUrl();
                         Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
                     }
                 }
