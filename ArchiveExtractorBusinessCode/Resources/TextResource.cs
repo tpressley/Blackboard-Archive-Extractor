@@ -40,11 +40,23 @@ namespace ArchiveExtractorBusinessCode.Resources
                 List<XElement> urls = xele.Descendants("URL").ToList();
                 for(int i = 0; i < urls.Count; i++)
                 {
-                    ParseLinks parser = new ParseLinks(urls[i].Value);
-                    if (parser.IsAbsoluteUri())
+                    string val = urls[i].Attribute("value").Value;
+                    if (val.Length != 0)
                     {
-                        bool isAlive = parser.RequestUrl();
-                        Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
+                        ParseLinks parser = new ParseLinks(val);
+                        Console.WriteLine(parser.Uri);
+                        if (parser.IsAbsoluteUri())
+                        {
+                            Console.WriteLine($"Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
+                            var isAlive = parser.RequestUrl();
+                            Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
+                            if (!isAlive)
+                            {
+                                Console.WriteLine(val, "For resource", RefId, "is not alive.");
+                                // Remove element if considered dead
+                                //xele.Descendants("URL").Where(x => x.Value == target).Remove();
+                            }
+                        }
                     }
                 }
             }
