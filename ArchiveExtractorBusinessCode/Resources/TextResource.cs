@@ -47,7 +47,7 @@ namespace ArchiveExtractorBusinessCode.Resources
                         Console.WriteLine(parser.Uri);
                         if (parser.IsAbsoluteUri())
                         {
-                            Console.WriteLine($"Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
+                            Console.WriteLine("Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
                             var isAlive = parser.RequestUrl();
                             Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
                             if (!isAlive)
