@@ -33,6 +33,19 @@ namespace ArchiveExtractorCLI
             Console.WriteLine("Extracting Zip...");
             try
             {
+
+                int count = 1;
+                string fileNameOnly = Path.GetFileNameWithoutExtension(tempLocation);
+                string extension = Path.GetExtension(tempLocation);
+                string path = Path.GetDirectoryName(tempLocation);
+                string newFullPath = tempLocation;
+
+                while (File.Exists(tempLocation))
+                {
+                    Console.WriteLine(count);
+                    string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
+                    tempLocation = Path.Combine(path, tempFileName + extension);
+                }
                 Archive.ExtractArchive(archiveLocation, tempLocation);
             }
             catch(FileNotFoundException)
@@ -41,7 +54,7 @@ namespace ArchiveExtractorCLI
                 Console.WriteLine("Error BAE001: File Not found");
                 return;
             }
-            Console.WriteLine("Done");
+
             var xml = File.ReadAllText(tempLocation + "/imsmanifest.xml");
             XElement manifest = XElement.Parse(xml);
 
@@ -50,7 +63,7 @@ namespace ArchiveExtractorCLI
             List<CourseContent> course = new List<CourseContent>();
             foreach (XElement x in xele)
             {
-                Console.WriteLine(x);
+                //Console.WriteLine(x);
                 CourseContent cc = new CourseContent(x, tempLocation);
                 course.Add(cc);
             }

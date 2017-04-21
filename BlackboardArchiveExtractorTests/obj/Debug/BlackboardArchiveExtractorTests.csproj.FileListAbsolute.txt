@@ -1,11 +1,3 @@
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.dll
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.pdb
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.exe
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.pdb
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
-C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.pdb
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.dll
@@ -25,5 +17,13 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\BlackboardArchiveExtractorTests\bin
 C:\cygwin64\home\Tristan Pressley\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.dll
 Z:\computer_science\cs410\410Crystal~1\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.csprojResolveAssemblyReference.cache
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\BlackboardArchiveExtractorTests.pdb
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.exe
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\bin\Debug\CS411Crystal.pdb
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.dll
+C:\Users\Grant\Documents\Computer Science\cs411\410Crystal\BlackboardArchiveExtractorTests\obj\Debug\BlackboardArchiveExtractorTests.pdb
