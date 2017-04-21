@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace CS411Crystal
 {
@@ -95,12 +96,12 @@ namespace CS411Crystal
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbxSourcePath;
-        private System.Windows.Forms.TextBox tbxDestination;
-        private System.Windows.Forms.Button btnExtract;
+        private TextBox tbxSourcePath;
+        private TextBox tbxDestination;
+        private Button btnExtract;
         private BackgroundWorker backgroundWorker;
         private BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ProgressBar progressBar;
+        private ProgressBar progressBar;
     }
 }
 

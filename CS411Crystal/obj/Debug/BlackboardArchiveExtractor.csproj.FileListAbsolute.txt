@@ -2,3 +2,10 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardAr
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.BlackboardExtractorMain.resources
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.Properties.Resources.resources
 C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\BlackboardArchiveExtractor.csproj.GenerateResource.Cache
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe.config
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\CS411Crystal.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\ArchiveExtractorBusinessCode.dll
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\bin\Debug\ArchiveExtractorBusinessCode.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.exe
+C:\cygwin64\home\Tristan Pressley\410Crystal\CS411Crystal\obj\Debug\CS411Crystal.pdb

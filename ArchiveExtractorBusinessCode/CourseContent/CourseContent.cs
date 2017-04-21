@@ -44,10 +44,10 @@ namespace ArchiveExtractorBusinessCode
         {
             if (XmlItemManifestElement.Descendants("title").ToList().Any())
             {
-                this.Name = XmlItemManifestElement.Descendants("title").ToList()[0].Value;
+                Name = XmlItemManifestElement.Descendants("title").ToList()[0].Value;
             }
-            this.Id = XmlItemManifestElement.Attributes().ToList()[0].Value;
-            this.RefId = XmlItemManifestElement.Attributes().ToList()[1].Value;
+            Id = XmlItemManifestElement.Attributes().ToList()[0].Value;
+            RefId = XmlItemManifestElement.Attributes().ToList()[1].Value;
 
             //Recursively create child elements here
             if (XmlItemManifestElement.Descendants("item").ToList().Any())

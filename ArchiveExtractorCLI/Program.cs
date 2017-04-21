@@ -67,7 +67,7 @@ namespace ArchiveExtractorCLI
             }
             Output.CreateRootIndex(course, extractDestination);
             Directory.Delete(tempLocation, true);
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
 
         /// <summary>

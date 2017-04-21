@@ -2,3 +2,4 @@ C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorBusinessCode\bin\De
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorBusinessCode\bin\Debug\ArchiveExtractorBusinessCode.pdb
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.dll
 C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.pdb
+C:\cygwin64\home\Tristan Pressley\410Crystal\ArchiveExtractorBusinessCode\obj\Debug\ArchiveExtractorBusinessCode.csprojResolveAssemblyReference.cache

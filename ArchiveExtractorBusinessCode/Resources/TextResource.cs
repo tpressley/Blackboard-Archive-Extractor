@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using System.IO;
+
 namespace ArchiveExtractorBusinessCode.Resources
 {
     class TextResource : BlackBoardResource
@@ -25,13 +26,13 @@ namespace ArchiveExtractorBusinessCode.Resources
             if (xele.Descendants("TEXT").Any())
             {
                 List<XElement> texts = xele.Descendants("TEXT").ToList();
-                this.Text = texts[0].Value;
+                Text = texts[0].Value;
             }
             else
             {
-                this.Text = "";
+                Text = "";
             }
-            this.RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
+            RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
             this.PathToResourceFile = PathToResourceFile;
 
             if (xele.Descendants("URL").Any())

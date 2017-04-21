@@ -1,9 +1,12 @@
-﻿using ArchiveExtractorBusinessCode;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
+// ReSharper disable once RedundantUsingDirective
+using ArchiveExtractorBusinessCode;
+
 namespace CS411Crystal
 {
     public partial class BlackboardExtractorMain : Form
@@ -15,12 +18,12 @@ namespace CS411Crystal
             progressBar.Maximum = 100;
         }
 
-        private void btnExtract_Click(object sender, System.EventArgs e)
+        private void btnExtract_Click(object sender, EventArgs e)
         {
             backgroundWorker.RunWorkerAsync();
         }
 
-        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker senderWorker = sender as BackgroundWorker;
 
