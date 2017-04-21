@@ -35,28 +35,48 @@ namespace ArchiveExtractorBusinessCode.Resources
             RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
             this.PathToResourceFile = PathToResourceFile;
 
-            if (xele.Descendants("URL").Any())
+            // arg flag
+            if (linkArgs.checkLinks)
             {
-                List<XElement> urls = xele.Descendants("URL").ToList();
-                for(int i = 0; i < urls.Count; i++)
+                if (xele.Descendants("URL").Any())
                 {
-                    string val = urls[i].Attribute("value").Value;
-                    if (val.Length != 0)
+                    List<XElement> urls = xele.Descendants("URL").ToList();
+                    for(int i = 0; i < urls.Count; i++)
                     {
-                        ParseLinks parser = new ParseLinks(val);
-                        Console.WriteLine(parser.Uri);
-                        if (parser.IsAbsoluteUri())
+                        string val = urls[i].Attribute("value").Value;
+
+                        if (val.Length != 0)
                         {
-                            Console.WriteLine("Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
-                            //var isAlive = parser.RequestUrl();
-                            //Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
-                            //if (!isAlive)
-                            //{
-                            //    Console.WriteLine(val, "For resource", RefId, "is not alive.");
-                            //    // Remove element if considered dead
-                            //    //xele.Descendants("URL").Where(x => x.Value == target).Remove();
-                            //}
                             Url = urls[0].Attribute("value").Value;
+                            // static dictionary
+                            var dict = UriDictionary.UriDict;
+
+                            ParseLinks parser = new ParseLinks(val);
+                            if (parser.IsAbsoluteUri() && !dict.ContainsKey(val))
+                            {
+                                if (!dict.ContainsKey(val))
+                                {
+                                    dict.Add(val, new URLObj());
+                                }
+
+                                dict[val].isAlive = true;
+
+                                Console.WriteLine("Length:{val.Length} Ref {this.RefId} CONTAINS URL: '{val}'");
+                                var isAlive = parser.RequestUrl();
+                                Console.WriteLine(PathToResourceFile, "is alive:", isAlive);
+                                if (!isAlive)
+                                {
+                                    Console.WriteLine(val, "For resource", RefId, "is not alive.");
+                                    dict[val].isAlive = false;
+                                    // Remove element if considered dead
+                                }
+                            }else if(parser.IsAbsoluteUri() && dict.ContainsKey(val))
+                            {
+                                if (!dict[val].filesFound.Contains(PathToResourceFile))
+                                {
+                                    dict[val].filesFound.Add(PathToResourceFile);
+                                }
+                            }
                         }
                     }
                 }
