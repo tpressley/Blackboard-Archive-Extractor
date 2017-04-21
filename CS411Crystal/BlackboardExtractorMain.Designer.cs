@@ -41,6 +41,7 @@ namespace CS411Crystal
             // 
             // tbxSourcePath
             // 
+            this.tbxSourcePath.AllowDrop = true;
             this.tbxSourcePath.Location = new System.Drawing.Point(12, 12);
             this.tbxSourcePath.Name = "tbxSourcePath";
             this.tbxSourcePath.Size = new System.Drawing.Size(143, 20);
@@ -49,6 +50,7 @@ namespace CS411Crystal
             // 
             // tbxDestination
             // 
+            this.tbxDestination.AllowDrop = true;
             this.tbxDestination.Location = new System.Drawing.Point(161, 12);
             this.tbxDestination.Name = "tbxDestination";
             this.tbxDestination.Size = new System.Drawing.Size(143, 20);

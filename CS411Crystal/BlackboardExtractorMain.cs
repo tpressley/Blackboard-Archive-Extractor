@@ -14,7 +14,7 @@ namespace CS411Crystal
     {
         public BlackboardExtractorMain()
         {
-
+            InitializeComponent();
             progressBar.Maximum = 100;
         }
 

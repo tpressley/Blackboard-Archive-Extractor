@@ -87,7 +87,10 @@ namespace ArchiveExtractorBusinessCode
             {
                 if (resources.All(f => string.IsNullOrEmpty(((TextResource)f).Url)))
                 {
-                    return false;
+                    if (resources.All(f => string.IsNullOrEmpty(((TextResource)f).FileName)))
+                    {
+                        return false;
+                    }
                 }
             }
 
@@ -119,9 +122,24 @@ namespace ArchiveExtractorBusinessCode
                     {
                         pageHtml += "<a href='" + resource.Url + "'> Link </a>";
                     }
+                    if (!string.IsNullOrEmpty(resource.FileName))
+                    {
+                        string directoryPath = Path.GetDirectoryName(targetPath);
+                        List<string> files = Directory.GetFiles(directoryPath + @"/Archive", "*" + resource.FileName.Replace("/","") + "*", SearchOption.AllDirectories).ToList();
+                        if (files.Any())
+                        {
+                            string filename = Path.GetFileName(files[0]);
+                            if (!File.Exists(directoryPath + "/" + filename))
+                            {
+                                File.Copy(files[0], directoryPath + "/" + filename);
+                                pageHtml += "<a href='" + filename + "'> Link </a>";
+                            }
+                        }
+                    }
                 }
             }
             
+
             pageHtml += "</html>";
             if (!File.Exists(targetPath))
             {

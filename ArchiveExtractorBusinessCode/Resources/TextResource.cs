@@ -12,7 +12,7 @@ namespace ArchiveExtractorBusinessCode.Resources
         public override string Text { get; set; }
         public string PathToResourceFile { get; set; }
         public string Url { get; set; }
-
+        public string FileName { get; set; }
         public TextResource(string text, string refId)
         {
             RefId = refId;
@@ -33,6 +33,15 @@ namespace ArchiveExtractorBusinessCode.Resources
             else
             {
                 Text = "";
+            }
+
+            if(xele.Descendants("FILE").Any())
+            {
+                IEnumerable<XElement> files = xele.Descendants("FILE");
+                if (files.Elements("NAME").Any())
+                {
+                    this.FileName = files.Elements("NAME").First( f => !string.IsNullOrEmpty(f.Value)).Value;
+                }
             }
             RefId = Path.GetFileNameWithoutExtension(PathToResourceFile);
             this.PathToResourceFile = PathToResourceFile;
