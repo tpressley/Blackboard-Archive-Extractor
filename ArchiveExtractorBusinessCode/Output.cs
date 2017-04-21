@@ -113,9 +113,12 @@ namespace ArchiveExtractorBusinessCode
                 }
 
                 var resource = res as TextResource;
-                if (!string.IsNullOrEmpty(resource.Url))
+                if (resource != null)
                 {
-                    pageHtml += "<a href='" + resource.Url + "'> Link </a>";
+                    if (!string.IsNullOrEmpty(resource.Url))
+                    {
+                        pageHtml += "<a href='" + resource.Url + "'> Link </a>";
+                    }
                 }
             }
             
