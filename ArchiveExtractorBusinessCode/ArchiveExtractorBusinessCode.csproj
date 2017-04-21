@@ -55,6 +55,7 @@
     <Compile Include="Resources\IBlackBoardResource.cs" />
     <Compile Include="Resources\ImageResource.cs" />
     <Compile Include="Resources\TextResource.cs" />
+    <Compile Include="UriDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="StaticFiles\index.html" />
